@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RMs-PD-Rsw">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="wzi-Hh-gU2">
+            <objects>
+                <viewController id="RMs-PD-Rsw" customClass="MapViewController" customModule="Parking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xEF-rQ-B1D">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Fbs-gI-roU">
+                                <rect key="frame" x="12" y="71" width="369" height="735"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKH-rP-vDs">
+                                        <rect key="frame" x="0.0" y="0.0" width="369" height="558"/>
+                                        <standardMapConfiguration key="preferredConfiguration"/>
+                                    </mapView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gJM-da-jsw">
+                                        <rect key="frame" x="0.0" y="590" width="369" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAZ-MO-ubu">
+                                                <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="32"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Zoom Out" cornerStyle="medium">
+                                                    <color key="baseBackgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="zoomOutTapped:" destination="RMs-PD-Rsw" eventType="touchUpInside" id="RFL-xJ-Qsb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-TL-JdA">
+                                                <rect key="frame" x="194.66666666666663" y="0.0" width="174.33333333333337" height="32"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Zoom In" cornerStyle="medium">
+                                                    <color key="baseBackgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="zoomInTapped:" destination="RMs-PD-Rsw" eventType="touchUpInside" id="pwd-C4-XaB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="ZN5-5s-Obg"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9R-c1-w8D">
+                                        <rect key="frame" x="0.0" y="654" width="369" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bj1-ci-yKb">
+                                        <rect key="frame" x="0.0" y="703" width="369" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="J0z-4C-sW6"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Start Parking" cornerStyle="medium">
+                                            <color key="baseForegroundColor" systemColor="tableBackgroundColor"/>
+                                            <color key="baseBackgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="parkingActionTapped:" destination="RMs-PD-Rsw" eventType="touchUpInside" id="Zic-Ku-Bw0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tei-lI-SE5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fbs-gI-roU" firstAttribute="leading" secondItem="Tei-lI-SE5" secondAttribute="leading" constant="12" id="6Hw-nt-PDy"/>
+                            <constraint firstItem="Fbs-gI-roU" firstAttribute="top" secondItem="Tei-lI-SE5" secondAttribute="top" constant="12" id="K6b-l8-QQA"/>
+                            <constraint firstItem="Tei-lI-SE5" firstAttribute="bottom" secondItem="Fbs-gI-roU" secondAttribute="bottom" constant="12" id="RgP-an-tou"/>
+                            <constraint firstItem="Tei-lI-SE5" firstAttribute="trailing" secondItem="Fbs-gI-roU" secondAttribute="trailing" constant="12" id="aZh-VQ-xoO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="MKH-rP-vDs" id="61j-YZ-bXz"/>
+                        <outlet property="outputLabel" destination="T9R-c1-w8D" id="7D7-c9-NpS"/>
+                        <outlet property="parkingButton" destination="bj1-ci-yKb" id="bJc-fm-hji"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wxM-V3-GJM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-356" y="-32"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tableBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
